@@ -1,114 +1,215 @@
+/* Inizio hamburger menu */
+.checkbox {
+  display: none;
+}
+
+.button {
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  z-index: 2000;
+  background-color: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+}
+
+.background {
+  height: 100%;
+  width: 100vh;
+  border-radius: 50%;
+  position: fixed;
+}
+
+.nav {
+  height: 100vh;
+  position: fixed;
+  opacity: 0;
+  transition: all 0.1s;
+}
+
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.item {
+  font-size: 36px;    
+}
+
+/* functionality */
+.checkbox:checked ~ .background {
+  transform: scale(80);
+}
+.checkbox:checked ~ .nav {
+  opacity: 1;
+  width: 100%;
+  right: 0;
+}
+
+/* styling hamb ICON */
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon,
+.icon::before,
+.icon::after {
+  width: 40px;
+  height: 2px;
+  background-color: gray;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.icon::before {
+  top: -15px;
+}
+.icon::after {
+  top: 15px;
+}
+
+.checkbox:checked + .button .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.checkbox:checked + .button .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+/* Fine hamburger menu */
+
+
+/* Inizio footer */
 * {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .footer {
-    width: 100%;
-    height: 100vh;
-    max-height: 100px;
-    background-color: #282828;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-height: 100px;
+  background-color: #282828;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .company{
-    background-image: url(../images/colorambo.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 33%;
-    height: 60px;
+  background-image: url(../images/colorambo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 33%;
+  height: 60px;
 }
 
 .company, .copyright{
-    width: 33%;
-    font-size: 14px;
-    color: lavender;
-    text-align: center;
+  width: 33%;
+  font-size: 14px;
+  color: lavender;
+  text-align: center;
 }
 
 .social-icon{
-    width: 33%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  width: 33%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
-    /* transform: translate(-50%, -50%); */
-    margin:0;
-    padding:0;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  }
-  
-  ul li {
-    list-style: none;
-    text-decoration: none;
-  }
-  
-  ul li a {
-   /*  position: relative; */
-    width:60px;
-    height:60px;
-    display:block;
-    text-align:center;
-    margin:0 10px;
-    border-radius: 50%;
-    padding: 6px;
-    box-sizing: border-box;
-    text-decoration:none;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-    background: linear-gradient(0deg, #ddd, #fff);
-    transition: .5s;
-  }
-  
-  ul li a:hover {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    text-decoration: none;
-  }
-  
-  ul li a .fa {
-    width: 100%;
-    height:100%;
-    display:block;
-    background: linear-gradient(0deg, #fff, #ddd);
-    border-radius: 50%;
-    line-height: calc(60px - 12px);
-    font-size:24px;
-    color: #262626;
-    transition: .5s;
-    text-decoration: none;
-  }
-  
-  ul li:nth-child(1) a:hover .fa {
-    color: #3b5998;
-    text-decoration: none;
-  }
-  
-  ul li:nth-child(2) a:hover .fa {
-    color: #00aced;
-    text-decoration: none;
-  }
-  
-  ul li:nth-child(3) a:hover .fa {
-    color: #dd4b39;
-    text-decoration: none;
-  }
-  
-  ul li:nth-child(4) a:hover .fa {
-    color: #007bb6;
-    text-decoration: none;
-  }
-  
-  ul li:nth-child(5) a:hover .fa {
-    color: #e4405f;
-    text-decoration: none;
-  }
+  /* transform: translate(-50%, -50%); */
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+  text-decoration: none;
+}
+
+ul li a {
+ /*  position: relative; */
+  width:60px;
+  height:60px;
+  display:block;
+  text-align:center;
+  margin:0 10px;
+  border-radius: 50%;
+  padding: 6px;
+  box-sizing: border-box;
+  text-decoration:none;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(0deg, #ddd, #fff);
+  transition: .5s;
+}
+
+ul li a:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+ul li a .fa {
+  width: 100%;
+  height:100%;
+  display:block;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size:24px;
+  color: #262626;
+  transition: .5s;
+  text-decoration: none;
+}
+
+ul li:nth-child(1) a:hover .fa {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+ul li:nth-child(2) a:hover .fa {
+  color: #00aced;
+  text-decoration: none;
+}
+
+ul li:nth-child(3) a:hover .fa {
+  color: #dd4b39;
+  text-decoration: none;
+}
+
+ul li:nth-child(4) a:hover .fa {
+  color: #007bb6;
+  text-decoration: none;
+}
+
+ul li:nth-child(5) a:hover .fa {
+  color: #e4405f;
+  text-decoration: none;
+}
+  /* Fine footer */
