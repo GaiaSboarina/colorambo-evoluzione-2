@@ -45,11 +45,19 @@ $sqlCreateTableColori = "CREATE TABLE colori (
     codice VARCHAR(7) NOT NULL, 
     creatore VARCHAR(50) NOT NULL, 
     FOREIGN KEY (creatore) REFERENCES utenti(email) )";
+$sqlCreateTablePreferiti = "CREATE TABLE preferiti (
+    id INT AUTO_INCREMENT NOT NULL, 
+    colore VARCHAR(20) NOT NULL, 
+    utente VARCHAR(50) NOT NULL, 
+    PRIMARY KEY (id), 
+    FOREIGN KEY (colore) REFERENCES colori(nome), 
+    FOREIGN KEY (utente) REFERENCES utenti(email) )";
 
 createDB($connection, "colorambo-evoluzione");
 createTable($connection, "utenti", $sqlCreateTableUtenti);
 createTable($connection, "colori", $sqlCreateTableColori);
+createTable($connection, "preferiti", $sqlCreateTablePreferiti);
 addUtente($connection, "Admin", "Admin", '1900-01-01', "Via Admin", "Admin", "admin", "admin", "Admin");
 echo '<br><br><a href="index.php">Vai al sito</a>';
-//robe fatte: creazione database, utente con tutti i privilegi sul database, creazione tabelle, aggiunta utente admin
+
 ?>
