@@ -28,6 +28,62 @@ function createTable($conn, $tableName, $query) {
     }
 }
 
+//carica 18 colori in tabella colori
+function caricaColori($conn) {
+    $nomi = [
+        "blue",
+        "red",
+        "yellow",
+        "green",
+        "white",
+        "grey",
+        "black",
+        "brown",
+        "pink",
+        "purple",
+        "violet",
+        "light-blue",
+        "orange",
+        "darkcyan",
+        "yellowgreen",
+        "turchese",
+        "jungle",
+        "coral"
+    ];
+    $codici = [
+        "#0000ff",
+        "#ff0000",
+        "#ffff00",
+        "#00ff00",
+        "#ffffff",
+        "#d3d3d3",
+        "#000000",
+        "#654321",
+        "#ffc0cb",
+        "#800080",
+        "#7f00ff",
+        "#add8e6",
+        "#ffa500",
+        "#008b8b",
+        "#9acd32",
+        "#30d5c8",
+        "#29ab87",
+        "#ff7f50"
+    ];
+    for ($i=0; $i < count($nomi); $i++) { 
+        $queryAddColors = "INSERT INTO colori 
+            (nome, codice, creatore) 
+            VALUES
+            ('" . $nomi[$i];
+        $queryAddColors = $queryAddColors . "', '" . $codici[$i] . "', 'Admin')";
+        if (mysqli_query($conn, $queryAddColors)) {
+            echo $i + 1 . ". Colore " . $nomi[$i] . " aggiunto<br>";
+        } else {
+            echo $i + 1 . ". Errore nell'aggiunta del colore " . $nomi[$i] . "<br>";
+        }
+    }
+}
+
 $connection = getConnection();
 $sqlCreateTableUtenti = "CREATE TABLE utenti (
     nome VARCHAR(20) NOT NULL,
@@ -58,6 +114,8 @@ createTable($connection, "utenti", $sqlCreateTableUtenti);
 createTable($connection, "colori", $sqlCreateTableColori);
 createTable($connection, "preferiti", $sqlCreateTablePreferiti);
 addUtente($connection, "Admin", "Admin", '1900-01-01', "Via Admin", "Admin", "admin", "admin", "Admin");
+echo "<br>";
+caricaColori($connection);
 echo '<br><br><a href="index.php">Vai al sito</a>';
 
 ?>
