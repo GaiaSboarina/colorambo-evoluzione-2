@@ -24,7 +24,7 @@ function createTable($conn, $tableName, $query) {
     if (mysqli_query($conn, $query)) {
         echo "Creata tabella $tableName <br>";
     } else {
-        echo "Errore creazione tabella<br>";
+        echo "Errore creazione tabella $tableName<br>";
     }
 }
 
@@ -84,7 +84,7 @@ function caricaColori($conn) {
     }
 }
 
-$connection = getConnection();
+
 $sqlCreateTableUtenti = "CREATE TABLE utenti (
     nome VARCHAR(20) NOT NULL,
     cognome VARCHAR(20) NOT NULL,
@@ -101,6 +101,7 @@ $sqlCreateTableColori = "CREATE TABLE colori (
     codice VARCHAR(7) NOT NULL, 
     creatore VARCHAR(50) NOT NULL, 
     FOREIGN KEY (creatore) REFERENCES utenti(email) )";
+
 $sqlCreateTablePreferiti = "CREATE TABLE preferiti (
     id INT AUTO_INCREMENT NOT NULL, 
     colore VARCHAR(20) NOT NULL, 
@@ -109,13 +110,15 @@ $sqlCreateTablePreferiti = "CREATE TABLE preferiti (
     FOREIGN KEY (colore) REFERENCES colori(nome), 
     FOREIGN KEY (utente) REFERENCES utenti(email) )";
 
-createDB($connection, "colorambo-evoluzione");
+$connection = getConnection();
+createDB($connection, "colorambo_evoluzione");
 createTable($connection, "utenti", $sqlCreateTableUtenti);
 createTable($connection, "colori", $sqlCreateTableColori);
 createTable($connection, "preferiti", $sqlCreateTablePreferiti);
-addUtente($connection, "Admin", "Admin", '1900-01-01', "Via Admin", "Admin", "admin", "admin", "Admin");
+addUtente($connection, "Admin", "Admin", '1900-01-01', "Via Admin", "Admin", "Admin", "Admin", "Admin");
 echo "<br>";
 caricaColori($connection);
+mysqli_close();
 echo '<br><br><a href="index.php">Vai al sito</a>';
 
 ?>
