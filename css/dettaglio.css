@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.immagine_logo {
+    width: 20%;
+    border: 20px solid transparent;
+}
+
+.container {
+    background-image: url('../images/triangles.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.immagini_per_numeri {
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.nome_creatore {
+    width: 7%;
+    /* border: 10px solid transparent; */
+}
+
+.views {
+    width: 10%;
+    /* border: 10px solid transparent; */
+}
+
+.preferiti {
+    width: 10%;
+    /* border: 10px solid transparent; */
+}
+
+.codice {
+    width: 20%;
+    height: 10%;
+    background-color: #009999;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    margin-top: 5%;
+    margin-left: 43%;
+    border-radius: 10%;
+}
+
+button {
+    width: 15%;
+    height: 5%;
+    background-color: black;
+    color: white;
+    border-radius: 10%;
+    border: black;
+    margin-left: 45%;
+    margin-top: 2%;
+    outline:none;
+}
+
+.creatore {
+    margin-left: -20%;
+}
+
+.visualizzazioni {
+    margin-top: -11%;
+    margin-left: 5%;
+}
+
+.cuori {
+    margin-top: -9%;
+    margin-left: 25%;
+}
