@@ -15,7 +15,7 @@ function createDB($conn, $name) {
         mysqli_query($conn, "GRANT ALL PRIVILEGES ON $name.* TO '$name'@'localhost'");
         mysqli_query($conn, "FLUSH PRIVILEGES");
     } else {
-        echo "Errore nella creazione dell'utente $name";
+        echo "Errore nella creazione dell'utente $nome";
     }
 }
 
