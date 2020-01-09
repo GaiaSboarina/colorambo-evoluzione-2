@@ -15,7 +15,7 @@ function createDB($conn, $name) {
         mysqli_query($conn, "GRANT ALL PRIVILEGES ON $name.* TO '$name'@'localhost'");
         mysqli_query($conn, "FLUSH PRIVILEGES");
     } else {
-        echo "Errore nella creazione dell'utente $nome";
+        echo "Errore nella creazione dell'utente $name";
     }
 }
 
@@ -118,7 +118,7 @@ createTable($connection, "preferiti", $sqlCreateTablePreferiti);
 addUtente($connection, "Admin", "Admin", '1900-01-01', "Via Admin", "Admin", "Admin", "Admin", "Admin");
 echo "<br>";
 caricaColori($connection);
-mysqli_close();
+mysqli_close($connection);
 echo '<br><br><a href="index.php">Vai al sito</a>';
 
 ?>

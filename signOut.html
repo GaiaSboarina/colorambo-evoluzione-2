@@ -18,28 +18,21 @@
             <div class="container-above">
                 <img src="images/colorambo.png">
             </div>
-            <div class="form1">
-                <input type="text" placeholder="name">
-                <input type="text" placeholder="surname">
-            </div>
-            <div class="form2">
-                <textarea rows="4" cols="50" name="description" form="usrform" style="width: 374px; margin-left: 1%;"></textarea>
-            </div>
-            <div class="form3">
-                <input type="text" placeholder="address">
-                <input type="datetime" placeholder="birthday">
-            </div>
-            <div class="form4">
-                <input type="text" placeholder="email">
-                <input type="radio" placeholder="Basic Account">Basic
-                <input type="radio" placeholder="Creator Account">Creator
-            </div>
-            <div class="form5">
-                <input type="password" placeholder="password">
-                <input type="password" placeholder="confirm password">
-                </div>
-            <a href="paginaPersonale.html"><input type="submit" value="sign in"></a>
-
+            <form class="form1" method="post" action="paginaPersonale.html">
+                <input type="text" placeholder="name" required>
+                <input type="text" placeholder="surname" required>
+                <textarea rows="4" cols="50" name="description" style="width: 374px; margin-left: 1%;" required></textarea>
+                <input type="text" placeholder="address" required>
+                <input type="datetime" placeholder="birthday" required>
+                <input type="email" placeholder="email" required>
+                <input type="radio" name="user_type" value="basic" required>Basic
+                <input type="radio" name="user_type" value="creator" required>Creator
+                <input type="password" placeholder="password" required>
+                <input type="password" placeholder="confirm password" required>
+                <a href="paginaPersonale.html">
+                    <input type="submit" value="sign in">
+                </a>
+            </form>
         </div>
     </div>
 

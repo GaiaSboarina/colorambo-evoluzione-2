@@ -1,19 +1,19 @@
 <?php
 
-require "functions.php";
+// require "functions.php";
 
-$connection = getConnection();
-$database = [];
-$result = mysqli_query($connection, "SHOW DATABASES");
-if ($result) {
-    $database = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    if (!in_array("colorambo-evoluzione", $database)) {
-        header("Location: installazione.php");
-        mysqli_close();
-        die();
-    }
-}
-mysqli_close();
+// $connection = getConnection();
+// $database = [];
+// $result = mysqli_query($connection, "SHOW DATABASES");
+// if ($result) {
+//     $database = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//     if (!in_array("colorambo_evoluzione", $database)) {
+//         header("Location: installazione.php");
+//         mysqli_close();
+//         die();
+//     }
+// }
+// mysqli_close();
 
 ?>
 <!DOCTYPE html>
