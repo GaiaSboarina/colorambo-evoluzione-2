@@ -78,6 +78,4 @@ function login($email, $password) {
         echo "utente non registrato";
     }
 }
-
-//fatto: connessione database, verifica se esiste il database, aggiunta utente, ritornare array di colori o utenti dal database, aggiunta colori, login
 ?>
