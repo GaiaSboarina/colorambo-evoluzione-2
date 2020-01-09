@@ -18,7 +18,7 @@
             <div class="container-above">
                 <img src="images/colorambo.png">
             </div>
-            <form class="form">
+            <form class="form" method="post" action="paginaPersonale.html">
                 <input type="email" placeholder="email" required />
                 <input type="password" placeholder="password" required />
                 <!-- <span>Forgot password</span> -->

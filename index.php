@@ -29,7 +29,7 @@ mysqli_close($connection);
     <!-- Prima parte (parte che si vede subito) -->
     <div class="prima_parte">
         <img src="images/colorambo.png" alt="Logo" class="immagine_logo">
-        <a href="signIn.html"><button class="btn">Accedi</button></a>
+        <a href="signIn.php"><button class="btn">Accedi</button></a>
         <a href="signOut.html"><button class="btn1">Registrati</button></a>
     </div>
     
