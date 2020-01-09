@@ -11,6 +11,22 @@ function getConnection() {
     return $connection;
 }
 
+//verifica se esiste il database
+function databaseExists($name, $connection) {
+    $databases = [];
+    $trovato = false;
+    $result = mysqli_query($connection, "SHOW DATABASES");
+    if ($result) {
+        $databases = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        foreach($databases as $database) {
+            if ($database['Database'] == "colorambo_evoluzione") {
+                $trovato = true;
+            }
+        }
+    }
+    return $trovato;
+}
+
 //aggiunge un utente alla tabella degli utenti
 function addUtente($conn, $nome, $cognome, $nascita, $residenza, $descrizione, $email, $password, $account) {
     $query = "INSERT INTO utenti 
@@ -63,5 +79,5 @@ function login($email, $password) {
     }
 }
 
-
+//fatto: connessione database, verifica se esiste il database, aggiunta utente, ritornare array di colori o utenti dal database, aggiunta colori, login
 ?>
